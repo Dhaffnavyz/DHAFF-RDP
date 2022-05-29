@@ -1,0 +1,45 @@
+name: MacOS (Ngrok VNC Viewer)
+on: 
+  workflow_dispatch:
+    inputs:
+      authtoken:
+        description: 'Ngrok Auth Token'
+        required: true
+      tunnelservers:
+        description: 'Ngrok Tunnel Servers (us, eu, ap, au, sa, jp or in)'
+        default: 'us'
+        required: true
+      username:
+        description: 'Username'
+        default: 'ZUser'
+        required: true
+      password:
+        description: 'Password (minimum 8-10 numbers/characters)'
+        required: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Mask Token, Username & Password.
+      shell: bash
+      run: |
+        _Token=$(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)
+        _User=$(jq -r '.inputs.username' $GITHUB_EVENT_PATH)
+        _Pass=$(jq -r '.inputs.password' $GITHUB_EVENT_PATH)
+        echo ::add-mask::$_Token
+        echo ::add-mask::$_User
+        echo ::add-mask::$_Pass
+        echo NGROK_TOKEN="$_Token" >> $GITHUB_ENV
+        echo UserName="$_User" >> $GITHUB_ENV
+        echo Password="$_Pass" >> $GITHUB_ENV
+    - name: Setup Environment.
+      run: |
+        wget https://raw.githubusercontent.com/koleksibot/Koleksibot-RDP/main/Files/t.bat
+        source MacOS-Setup.sh "${{ env.NGROK_TOKEN }}" "${{ github.event.inputs.tunnelservers }}" "${{ env.UserName }}" "${{ env.Password }}"
+    - name: IP for Connect to your RDPiz.
+      run: source ip.sh
+    - name: Keep Alive.
+      shell: bash
+      run: sh t.bat
