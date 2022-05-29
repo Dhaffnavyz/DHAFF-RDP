@@ -1,0 +1,66 @@
+name: Ubuntu Desktop (Google Remote Desktop)
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter Google Remote Desktop (Debian Linux) code'
+        required: true
+      computername:
+        description: 'Computer Name'
+        default: 'ZVM'
+        required: true
+      pincode:
+        description: 'Six digit Pin'
+        default: '12345678'
+        required: true
+      desktop:
+        description: 'desktop number/code'
+        default: 'ubuntu'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Mask Code & Pin.
+      shell: bash
+      run: |
+        _Code=$(jq -r '.inputs.authcode' $GITHUB_EVENT_PATH)
+        _CName=$(jq -r '.inputs.computername' $GITHUB_EVENT_PATH)
+        _Pin=$(jq -r '.inputs.pincode' $GITHUB_EVENT_PATH)
+        echo ::add-mask::$_Code
+        echo ::add-mask::$_CName
+        echo ::add-mask::$_Pin
+        echo AuthCode="$_Code" >> $GITHUB_ENV
+        echo ComputerName="$_CName" >> $GITHUB_ENV
+        echo AuthPin="$_Pin" >> $GITHUB_ENV
+    - name: Setup Desktop Environment.
+      run: source Ubuntu-Setup.sh "${{ github.event.inputs.desktop }}"
+    - name: Setup Google Remote Desktop.
+      run: |
+        sudo apt install nautilus expect nano -y
+        sudo apt install --assume-yes xscreensaver
+        sudo apt-get update
+        sudo apt-get install xbase-clients python3-psutil xvfb -y
+        wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+        wget https://raw.githubusercontent.com/koleksibot/Koleksibot-RDP/main/Files/t.bat
+        sudo dpkg --install chrome-remote-desktop_current_amd64.deb
+        sudo apt install --assume-yes --fix-broken
+        sudo hostname ${{ env.ComputerName }}
+        touch setup.sh
+        echo "${{ env.AuthCode }}" >> "setup.sh"
+        chmod 777 setup.sh
+    - name: Starting Google Remote Desktop
+      run: |
+        expect -c '
+        spawn ./setup.sh
+        expect "Enter a PIN of at least six digits: "
+        send "${{ env.AuthPin }}\r"
+        expect "Enter the same PIN again: "
+        send "${{ env.AuthPin }}\r"
+        expect eof
+        '
+    - name: Keep Alive.
+      shell: bash
+      run: sh t.bat
