@@ -1,4 +1,4 @@
-name: Windows (Ngrok Koleksibot-RDP)
+name: Windows (Ngrok Dnazcode-RDP)
 
 on: 
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
         description: 'Ngrok Auth Token'
         required: true
       tunnelservers:
-        description: 'Ngrok Tunnel Servers (us, eu, ap, au, sa, jp or in)'
+        description: 'Ngrok Tunnel Servers (us, eu, ap, au, sa, jp, id)'
         default: 'us'
         required: true
       password:
