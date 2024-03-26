@@ -1,5 +1,10 @@
 ## RDP Windows, Ubuntu & MacOS
  #NEWWW UPDATE RDP & VPS TERBARU 2024
+ 
+ Yang Gak Mau ribet Bisa beli VPS/RDP Nya Via Admin
+ Dnazcode Mau Order Di wa Atau IG Atau Website Silahkan
+ Namun Sekarang DI Utamakan DM AJA DI IG @dnazper
+ 
 ## DNazCode Net VPS/VPS BOT
 
 [![OS - Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/en-us/windows-server)
