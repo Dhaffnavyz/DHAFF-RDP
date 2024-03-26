@@ -38,17 +38,16 @@ You need set secrets on settings → (NGROK or CF)
 
 These steps should be useful for debugging broken builds directly on the build worker. Use this project as reference and toss the steps into your project after some failing part of the build for introspection.
 
-### Option 1 (Easiest way 🚑- No sound) LANG ID
-
-1) Go https://remotedesktop.google.com/headless and login if needed.
-2) Copy Powershell command that page.
-3) Go actions tab in your forked repo.
-4) Select `Chrome Remote Desktop`
-5) Trigger action with your desired 6 digit pin and paste command in step 1.
-6) Go again step 1 link in remote Support tab.
-7) When setup finished , you can see the machine in list , write your pin and connect.
-8) Enjoy! ☕
-9) When you're done introspecting, cancel the job.
+### Opsi 1 (Cara termudah 🚑- Tidak ada suara) ID LANG 
+1) Buka https://remodesktop.google.com/headless dan login jika diperlukan.
+2) Salin perintah Powershell halaman itu.
+3) Buka tab tindakan di repo bercabang Anda.
+4) Pilih `Chrome Remote Desktop`
+5) Picu tindakan dengan perintah pin 6 digit yang Anda inginkan dan tempel di langkah 1.
+6) Lanjutkan lagi tautan langkah 1 di tab Dukungan jarak jauh.
+7) Ketika pengaturan selesai, Anda dapat melihat mesin dalam daftar, tulis pin Anda dan sambungkan.
+8) Selamat menikmati! ☕
+9) Jika sudah selesai introspeksi, batalkan pekerjaan tersebut.
 
 ### Opsi 2 (Cara mudah 🚘)
 
