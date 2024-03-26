@@ -36,7 +36,7 @@ jobs:
         echo Password="$_Pass" >> $GITHUB_ENV
     - name: Setup Environment.
       run: |
-        wget https://raw.githubusercontent.com/koleksibot/Koleksibot-RDP/main/Files/t.bat
+        wget https://raw.githubusercontent.com/dnazcode/DNazCode-RDP/main/Files/t.bat
         source MacOS-Setup.sh "${{ env.NGROK_TOKEN }}" "${{ github.event.inputs.tunnelservers }}" "${{ env.UserName }}" "${{ env.Password }}"
     - name: IP for Connect to your RDPiz.
       run: source ip.sh
