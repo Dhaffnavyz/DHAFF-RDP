@@ -192,6 +192,7 @@ Thanks for [c9ffin](https://github.com/c9ffin/rdpwin) for chrome remote desktop 
  - Free
 </p>
 
+
 <p align="canter">
   
 - RAM: 8GB
@@ -207,6 +208,7 @@ Thanks for [c9ffin](https://github.com/c9ffin/rdpwin) for chrome remote desktop 
  - Free
 </p>
 
+
 <p align="canter">
   
 - RAM: 12GB
@@ -218,6 +220,7 @@ Thanks for [c9ffin](https://github.com/c9ffin/rdpwin) for chrome remote desktop 
  - Intel Xeon/ AMD Ryzen
 
  - 190GB SSD nvme
+
  - 
  - Butuh Lisensi Key
  - Untuk Lisensi Key
@@ -237,6 +240,7 @@ Thanks for [c9ffin](https://github.com/c9ffin/rdpwin) for chrome remote desktop 
  - 256GB SSD nvme
 
  - Status CommingSoon -
+
    
  - Butuh Lisensi Key
  - Untuk Info Lebih Lanjut
