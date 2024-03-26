@@ -1,6 +1,6 @@
 ## RDP Windows, Ubuntu & MacOS
  #NEWWW UPDATE RDP & VPS TERBARU 2024
-## Dhaffofficial X Rdp BOT
+## DNazCode Net VPS/VPS BOT
 
 [![OS - Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/en-us/windows-server)
 [![OS - Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
@@ -34,18 +34,6 @@ You need set secrets on settings → (NGROK or CF)
 These steps should be useful for debugging broken builds directly on the build worker. Use this project as reference and toss the steps into your project after some failing part of the build for introspection.
 
 ### Option 1 (Easiest way 🚑- No sound) LANG ID
-
-1) Go https://remotedesktop.google.com/headless and login if needed.
-2) Copy Powershell command that page.
-3) Go actions tab in your forked repo.
-4) Select `Chrome Remote Desktop`
-5) Trigger action with your desired 6 digit pin and paste command in step 1.
-6) Go again step 1 link in remote Support tab.
-7) When setup finished , you can see the machine in list , write your pin and connect.
-8) Enjoy! ☕
-9) When you're done introspecting, cancel the job.
-
-### Option 1 (Easiest way 🚑- No sound) LANG ENG
 
 1) Go https://remotedesktop.google.com/headless and login if needed.
 2) Copy Powershell command that page.
@@ -97,6 +85,18 @@ These steps should be useful for debugging broken builds directly on the build w
      > Anda dapat mengatur port apa pun yang tersedia ke `portfromlocal`
 7) Kemudian buka program rdp connect dan jalankan `localhost:portfromlocal` saja
 8) **TADAAAAA!!!** penundaan rendah kinerja lebih baik 🚀
+
+### Option 1 (Easiest way 🚑- No sound) LANG ENG
+
+1) Go https://remotedesktop.google.com/headless and login if needed.
+2) Copy Powershell command that page.
+3) Go actions tab in your forked repo.
+4) Select `Chrome Remote Desktop`
+5) Trigger action with your desired 6 digit pin and paste command in step 1.
+6) Go again step 1 link in remote Support tab.
+7) When setup finished , you can see the machine in list , write your pin and connect.
+8) Enjoy! ☕
+9) When you're done introspecting, cancel the job.
 
 
 ### Option 2 (Easy way 🚘) 
